@@ -1,0 +1,60 @@
+---
+// @ts-nocheck
+import { useTranslations } from '../../i18n/config';
+
+// Importar los datos de forma estática
+import esData from '../../i18n/lang/es/screen14.json';
+import enData from '../../i18n/lang/en/screen14.json';
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+// Seleccionar los datos según el idioma
+const data = lang === 'es' ? esData : enData;
+console.log('SCREEN 14 white - Contacto/ Contact')
+---
+
+<section class="section-14 h-full w-full fixed top-0 invisible">
+  <div class="outer w-full h-full overflow-hidden">
+    <div class="inner w-full h-full overflow-hidden">
+      <div class="bg bg-14 absolute w-full h-screen">
+        <div class="w-full h-screen relative">
+          <div class="section-heading-top absolute w-full xsm:h-[96%] flex justify-center lg:justify-end items-center" data-delay="0.8">
+            <img src="/assets/thunderGray.svg" class="h-[100%] 2xl:mr-[265px] z-0" alt="Logo thunder White">
+          </div>
+          <div class="w-full h-full flex flex-col items-center md:items-start justify-center md:justify-start px-8 md:pt-[10%] z-0">
+            <h1 class="section-heading  text-[55px] leading-[55px] xs:text-[70px] xs:leading-[70px] md:text-[100px] md:leading-[100px] lg:text-[120px] lg:leading-[120px] xl:text-[140px] xl:leading-[140px] 2xl:text-[180px] 2xl:leading-[180px] font-bold font-MadeCanvas text-white text-center tracking-[0]" data-delay="0.5">
+              {data.heading}
+            </h1>
+            <div class="flex flex-col items-start justify-center gap-6 sm:gap-6 z-10">
+              <div class="w-full flex flex-col items-center md:items-start justify-center gap-0 ">
+
+                <a href="mailto:julio.roman@apachenergy.com" class="text-[22px] leading-[26px] md:text-[26px] md:leading-[30px] lg:text-[30px] lg:leading-[34px] xl:text-[34px] xl:leading-[38px] font-RobotoSlab font-light hover:text-gray-400 transition-colors duration-300 section-heading" data-delay="0.7">julio.roman@apachenergy.com</a>
+
+                <a href="tel:+34 648 038 824" class="text-[22px] leading-[26px] md:text-[26px] md:leading-[30px] lg:text-[30px] lg:leading-[34px] xl:text-[34px] xl:leading-[38px] font-RobotoSlab font-light hover:text-gray-400 transition-colors duration-300 section-heading" data-delay="0.9">+34 648 038 824</a>
+
+              </div>
+              <div class="w-full flex flex-col items-center md:items-start justify-center">
+                <a href="#" class="text-[22px] leading-[26px] md:text-[26px] md:leading-[30px] lg:text-[30px] lg:leading-[34px] xl:text-[34px] xl:leading-[38px] text-center md:text-left font-RobotoSlab font-light hover:text-gray-400 transition-colors duration-300 section-heading" data-delay="1.1">
+                  Calle Gaztambide 63  </br>
+                  28015 Madrid
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bg-14 {
+    background: #121212 !important;
+  }
+  
+  .bg-14 h2,
+  .bg-14 h3 {
+    color: #000;
+  }
+</style>

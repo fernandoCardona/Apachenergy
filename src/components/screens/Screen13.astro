@@ -1,0 +1,68 @@
+---
+const { lang } = Astro.props;
+
+// Importar todos los datos de forma estática
+import esData from '../../i18n/lang/es/screen13.json';
+import enData from '../../i18n/lang/en/screen13.json';
+
+// Seleccionar los datos según el idioma
+const data = lang === 'es' ? esData : enData;
+console.log('SCREEN 13 black')
+---
+<section class="section-13 h-full w-full fixed top-0 invisible">
+  <div class="outer w-full h-full overflow-hidden">
+    <div class="inner w-full h-full overflow-hidden">
+      <div class="bg bg-13 absolute w-full h-full flex items-center justify-center">
+        <div class="w-full h-screen relative">
+          <div class="section-heading-top absolute w-full xsm:h-[96%] flex justify-center lg:justify-end items-center" data-delay="0.8">
+            <img src="/assets/thunderWhite.svg" class="h-[100%] 2xl:mr-[265px] z-0" alt="Logo thunder White">
+          </div>
+          <div class="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-[20px] md:gap-[40px] lg:gap-[80px] xl:gap-[100px] z-0">
+            <div class="w-full lg:h-full lg:w-[200px] flex justify-center items-center lg:justify-start lg:items-start z-10">
+              <!-- Versión para móviles (<768px): usa "section-heading-left" -->
+              <h2 class={`block lg:hidden lg:absolute ${lang === 'es' ? 'lg:left-[-50px]' : 'lg:left-[-50px]'} lg:top-[300px] flex text-[40px] leading-[40px] xs:text-[55px] xs:leading-[55px] md:text-[80px] md:leading-[80px] tracking-[0px] font-MadeCanvas text-center lg:-rotate-90 section-heading`}
+              data-delay="0.5" 
+              set:html={data.heading}
+              ></h2>
+              <!-- Versión para desktop (>=768px): usa "section-heading" -->
+              <h2 class={`hidden  lg:flex lg:absolute ${lang === 'es' ? 'lg:left-[-70px]' : 'lg:left-[-60px]'} lg:top-[300px] flex text-[40px] leading-[40px] xs:text-[55px] xs:leading-[55px] md:text-[80px] md:leading-[80px] tracking-[0px] font-MadeCanvas text-center lg:-rotate-90 section-heading-left`}
+              data-delay="0.5" 
+              set:html={data.heading}
+              ></h2>
+            </div>
+            <div class="w-[100%] lg:w-full lg:h-full flex flex-col justify-start items-center lg:justify-start lg:items-start gap-2 md:gap-4 lg:pl-[5%] xl:pl-[4%] 3xl:pl-[2%] lg:pr-[5%] xl:pr-[4%] lg:pt-[140px] z-10">
+              <p class="w-fit max-w-[90%] text-center lg:text-left font-RobotoSlab text-[12px] leading-[14px] xs:text-[16px] xs:leading-[20px] md:text-[20px] md:leading-[24px] lg:text-[24px] lg:leading-[28px] text-black section-heading"
+               set:html={data.description}
+               data-delay="0.7"
+               ></p>
+              <!-- Carrusel Responsivo -->
+              <div class="section-heading w-[90%] h-full md:w-[100%] lg:w-full md:flex-col md:justify-start mt-2 md:max-w-[650px] lg:max-w-[750px] xl:max-w-[950px] 2xl:max-w-[1000px] md:max-h-[550px] lg:max-h-[550px] " data-delay="0.9">
+                <ul class="w-full flex flex-col justify-center items-start gap-2">
+                  {data.services.map((service) => (
+                    <li class="relative w-full bg-white p-4 md:p-4 rounded-md flex items-center">
+                      <div class="w-full flex items-center gap-4">
+                        <img src={service.image} alt="Block number" class="w-8 h-8 md:w-10 md:h-10 mt-[-35px]" />
+                        <p class="text-[16px] md:text-[20px] lg:text-[24px] font-RobotoSlab font-light text-black">{service.title}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bg-13 {
+    background: #F4F4F4 !important;
+  }
+  
+  .bg-13 h2 {
+    color: #121212;
+  }
+</style>

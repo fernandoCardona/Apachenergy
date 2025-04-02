@@ -1,0 +1,60 @@
+{
+    "heading": "Las <br class=\"hidden lg:block\"/>Ventajas",
+    "description": "Además de ahorrar en la factura de la luz, los sistemas fotovoltaicos reducen el impacto ambiental y hacen que dependamos menos de las grandes eléctricas. Las principales ventajas de contar con un sistema fotovoltaico propio son:",
+    "ventajas": [
+      {
+        "id": 1,
+        "title": "ECONÓMICAS",
+        "image": "/assets/icons/01.svg",
+        "content": [
+          "<strong>Reducción de costes energéticos:</strong> compartir la energía generada reduce la factura eléctrica.",
+          "<strong>Independencia energética:</strong> de grandes empresas eléctricas y de las fluctuaciones en los precios del mercado.",
+          "<strong>Incentivos fiscales y subvenciones:</strong> las bonificaciones en IBI e IRPF compensan en gran medida la inversión que la instalación de paneles conlleva.",
+          "<strong>Incremento del valor de las viviendas:</strong> una mejor clasificación energética aumenta el valor del inmueble entre un 10% y un 20%.",
+          "<strong>Compensación de excedentes:</strong> la energía sobrante no se pierde ni se vende."
+        ],
+        "bgColor": "bg-white"
+      },
+      {
+        "id": 2,
+        "title": "AMBIENTALES",
+        "image": "/assets/icons/02.svg",
+        "content": [
+          "<strong>Reducción de la huella de carbono:</strong> disminuye las emisiones de gases de efecto invernadero.",
+          "<strong>Fomento de energías renovables:</strong> promueve el uso de tecnologías sostenibles y contribuye a la transición energética.",
+          "<strong>Menor impacto en el medio ambiente:</strong> reduce la necesidad de generación eléctrica a gran escala.",
+          "<strong>Mejor conciencia ambiental:</strong> fomenta un consumo energético responsable y el cuidado del planeta."
+        ],
+        "bgColor": "bg-white"
+      },
+      {
+        "id": 3,
+        "title": "SOCIALES",
+        "image": "/assets/icons/03.svg",
+        "content": [
+          "<strong>Fortalecimiento de las comunidades:</strong> impulsa la cooperación y el sentido de pertenencia entre los vecinos al compartir un recurso común.",
+          "<strong>Acceso inclusivo a la energía renovable:</strong> personas sin posibilidad de instalar sistemas individuales acceden a energía limpia gracias al autoconsumo colectivo."
+        ],
+        "bgColor": "bg-white"
+      },
+      {
+        "id": 4,
+        "title": "TECNOLÓGICAS",
+        "image": "/assets/icons/04.svg",
+        "content": [
+          "<strong>Innovación y eficiencia:</strong> favorece el uso de tecnologías avanzadas como sistemas de almacenamiento, redes inteligentes y plataformas de gestión energética.",
+          "<strong>Autonomía energética:</strong> sistemas locales y distribuidos por la comunidad que pueden funcionar incluso durante fallos de la red eléctrica general."
+        ],
+        "bgColor": "bg-white"
+      },
+      {
+        "id": 5,
+        "title": "LEGALES",
+        "image": "/assets/icons/05.svg",
+        "content": [
+          "<strong>Cumplimiento de normativas climáticas:</strong> contribuye a los objetivos de sostenibilidad establecidos por gobiernos y organizaciones internacionales."
+        ],
+        "bgColor": "bg-white"
+      }
+    ]
+  }

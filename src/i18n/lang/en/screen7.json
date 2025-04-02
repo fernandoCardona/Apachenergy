@@ -1,0 +1,60 @@
+{
+    "heading": "The <br class=\"hidden xs:block\"/>Advantages",
+    "description": "In addition to saving on electricity bills, photovoltaic systems reduce environmental impact and make us less dependent on large power companies. The main advantages of having your own photovoltaic system are:",
+    "ventajas": [
+      {
+        "id": 1,
+        "title": "ECONOMIC",
+        "image": "/assets/icons/01.svg",
+        "content": [
+          "<strong>Reduction in energy costs:</strong> sharing generated energy reduces the electricity bill.",
+          "<strong>Energy independence:</strong> from large power companies and fluctuations in market prices.",
+          "<strong>Tax incentives and subsidies:</strong> deductions in IBI and IRPF largely compensate for the investment that panel installation entails.",
+          "<strong>Increase in property value:</strong> better energy classification increases property value by 10% to 20%.",
+          "<strong>Surplus compensation:</strong> excess energy is not lost or sold."
+        ],
+        "bgColor": "bg-white"
+      },
+      {
+        "id": 2,
+        "title": "ENVIRONMENTAL",
+        "image": "/assets/icons/02.svg",
+        "content": [
+          "<strong>Reduction of carbon footprint:</strong> decreases greenhouse gas emissions.",
+          "<strong>Promotion of renewable energies:</strong> promotes the use of sustainable technologies and contributes to the energy transition.",
+          "<strong>Lower environmental impact:</strong> reduces the need for large-scale electricity generation.",
+          "<strong>Better environmental awareness:</strong> fosters responsible energy consumption and care for the planet."
+        ],
+        "bgColor": "bg-white"
+      },
+      {
+        "id": 3,
+        "title": "SOCIAL",
+        "image": "/assets/icons/03.svg",
+        "content": [
+          "<strong>Strengthening communities:</strong> promotes cooperation and a sense of belonging among neighbors by sharing a common resource.",
+          "<strong>Inclusive access to renewable energy:</strong> people without the possibility of installing individual systems access clean energy thanks to collective self-consumption."
+        ],
+        "bgColor": "bg-white"
+      },
+      {
+        "id": 4,
+        "title": "TECHNOLOGICAL",
+        "image": "/assets/icons/04.svg",
+        "content": [
+          "<strong>Innovation and efficiency:</strong> favors the use of advanced technologies such as storage systems, smart grids, and energy management platforms.",
+          "<strong>Energy autonomy:</strong> local systems distributed throughout the community that can function even during general power grid failures."
+        ],
+        "bgColor": "bg-white"
+      },
+      {
+        "id": 5,
+        "title": "LEGAL",
+        "image": "/assets/icons/05.svg",
+        "content": [
+          "<strong>Compliance with climate regulations:</strong> contributes to sustainability objectives established by governments and international organizations."
+        ],
+        "bgColor": "bg-white"
+      }
+    ]
+  }

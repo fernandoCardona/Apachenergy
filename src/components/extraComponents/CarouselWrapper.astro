@@ -1,0 +1,31 @@
+---
+import ResponsiveCarousel from './ResponsiveCarousel.jsx';
+
+const { lang } = Astro.props;
+
+// Importar todos los datos de forma estática
+import esData from '../../i18n/lang/es/screen5.json';
+import enData from '../../i18n/lang/en/screen5.json';
+
+// Seleccionar los datos según el idioma
+const data = lang === 'es' ? esData : enData;
+
+// Extract the carousel data
+const nuestrosServicios = data.nuestrosServicios || [];
+---
+
+<div class="carousel-container w-full h-full">
+  <ResponsiveCarousel client:visible slides={nuestrosServicios} />
+</div>
+
+<style is:global>
+  /* Estilos adicionales para Swiper */
+  .swiper-pagination-bullet {
+    background-color: #121212 !important;
+    opacity: 0.5;
+  }
+  
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+</style>

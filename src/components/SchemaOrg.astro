@@ -1,0 +1,30 @@
+---
+const { 
+  title, 
+  description, 
+  type = "Organization",
+  url,
+  image = "/assets/og-image.jpg"
+} = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": type,
+  "name": "Apache Energy",
+  "url": url,
+  "logo": new URL("/assets/logos/LogoBlack.svg", url).toString(),
+  "description": description,
+  "image": new URL(image, url).toString(),
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "ES"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+34-XXX-XXX-XXX",
+    "contactType": "customer service"
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

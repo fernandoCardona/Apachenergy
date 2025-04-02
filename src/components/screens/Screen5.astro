@@ -1,0 +1,60 @@
+---
+import CarouselWrapper from '../extraComponents/CarouselWrapper.astro';
+
+const { lang } = Astro.props;
+
+// Importar todos los datos de forma estática
+import esData from '../../i18n/lang/es/screen5.json';
+import enData from '../../i18n/lang/en/screen5.json';
+
+// Seleccionar los datos según el idioma
+const data = lang === 'es' ? esData : enData;
+console.log('SCREEN 5 black')
+---
+<section class="section-5 h-full w-full fixed top-0 invisible">
+  <div class="outer w-full h-full overflow-hidden">
+    <div class="inner w-full h-full overflow-hidden">
+      <div class="bg bg-5 absolute w-full h-full flex items-center justify-center">
+        <div class="w-full h-screen relative">
+          <div class="section-heading-top absolute w-full xsm:h-[96%] flex justify-center lg:justify-end items-center" data-delay="0.8">
+            <img src="/assets/thunderWhite.svg" class="h-[100%] 2xl:mr-[265px] z-0" alt=" Logo thunder White">
+          </div>
+          <div class="w-full h-full flex flex-col lg:flex-row items-center justify-center   gap-[20px] md:gap-[40px] lg:gap-[80px] xl:gap-[100px] z-0">
+            <div class="w-full lg:h-full lg:w-[200px] flex justify-center items-center lg:justify-start lg:items-start z-10">
+              <!-- Versión para móviles (<768px): usa "section-heading-left" -->
+                <h2 
+                class="block lg:hidden lg:absolute lg:top-[300px] text-[40px] leading-[40px] xs:text-[55px] xs:leading-[55px] md:text-[80px] md:leading-[80px] tracking-[0px] font-MadeCanvas text-center lg:-rotate-90 section-heading"
+                data-delay="0.5"
+                set:html={data.heading}
+              ></h2>
+              <!-- Versión para desktop (>=768px): usa "section-heading" -->
+              <h2 
+                class={`hidden lg:flex lg:absolute ${lang === 'es' ? 'lg:left-[-70px]' : 'lg:left-[-60px]'} lg:top-[300px] text-[40px] leading-[40px] xs:text-[55px] xs:leading-[55px] md:text-[80px] md:leading-[80px] tracking-[0px] font-MadeCanvas text-center lg:-rotate-90 section-heading-left`}
+                data-delay="0.5"
+                set:html={data.heading}
+              ></h2>
+            </div>
+            <div class="w-[100%] lg:w-full lg:h-full flex flex-col justify-start items-center lg:justify-start lg:items-start gap-2 md:gap-4 lg:pl-[5%] xl:pl-[4%] 3xl:pl-[2%] lg:pr-[5%] xl:pr-[4%] lg:pt-[140px] z-10">
+              <p class="section-heading w-fit max-w-[90%] text-center lg:text-left font-RobotoSlab text-[12px] leading-[14px] xs:text-[16px] xs:leading-[20px] md:text-[20px] md:leading-[24px] lg:text-[24px] lg:leading-[28px] text-black" data-delay="0.7" set:html={data.description}>
+              </p>
+              <!-- Carrusel Responsivo -->
+              <div class="section-heading w-full h-full md:w-[90%] lg:w-full md:flex-col md:justify-start mt-2 md:max-w-[650px] lg:max-w-[750px] xl:max-w-[950px] 2xl:max-w-[1100px] 2bxl:max-w-[1300px] md:max-h-[550px] lg:max-h-[550px]" data-delay="0.9">
+                <CarouselWrapper lang={lang} screen="5" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bg-5 {
+    background: #F4F4F4 !important;
+  }
+  
+  .bg-5 h2 {
+    color: #121212;
+  }
+</style>

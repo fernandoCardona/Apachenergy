@@ -1,0 +1,27 @@
+{
+  "heading": "Nuestros <br class=\"block xs:hidden\"/>Servicios",
+  "description": "Lo que ofrecemos para alcanzar el objetivo.",
+  "nuestrosServicios": [
+    {
+      "id": 1,
+      "title": "INGENIERÍA",
+      "image": "/assets/icons/ApacheEnergyIcon5.svg",
+      "content": [
+        "<strong>Realizamos un estudio</strong> técnico y económico a medida para buscar la mejor solución posible.",
+        "<strong>Ayudamos a elegir</strong> la empresa instaladora más adecuada."
+      ],
+      "bgColor": "bg-white"
+    },
+    {
+      "id": 2,
+      "title": "GESTIÓN",
+      "image": "/assets/icons/ApacheEnergyIcon4.svg",
+      "content": [
+        "<strong>Gestionamos los permisos</strong> y trámites administrativos.",
+        "<strong>Asesoramos para acceder</strong> a subvenciones y ayudas.",
+        "<strong>Optimizamos los excedentes de energía</strong> entre los vecinos."
+      ],
+      "bgColor": "bg-white"
+    }
+  ]
+}

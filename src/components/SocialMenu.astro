@@ -1,0 +1,88 @@
+---
+// @ts-nocheck
+// @ts-ignore
+/* Componente SocialFooter.astro */
+import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { PiInstagramLogoThin, PiLinkedinLogo } from "react-icons/pi";
+const { class: className } = Astro.props;
+---
+
+<div id="socialContainer" class="hidden fixed bottom-[80px] right-9 z-50 md:flex flex-col gap-5 items-center">
+  <a 
+    href="https://www.linkedin.com/company/apache-energy" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="social-link text-white hover:text-gray-300 transition-colors"
+    aria-label="LinkedIn"
+  >
+    <PiLinkedinLogo />
+  </a>
+  <a 
+    href="https://www.instagram.com" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="social-link text-white hover:text-gray-300 transition-colors"
+    aria-label="Instagram"
+  >
+      <PiInstagramLogoThin className="w-6 h-6" />
+  </a>
+  <!-- Línea vertical debajo del ícono -->
+  <div id="socialLine" class="h-[70px] w-[1px] bg-white"></div>
+</div>
+
+<script>
+  // @ts-nocheck
+  // Pantallas en las que se debe cambiar el color (igual que en el header y footer)
+  const darkScreens = [3, 5, 7, 9, 11, 13];
+
+  // Selecciona todos los enlaces con la clase "social-link"
+  const socialLinks = document.querySelectorAll('.social-link');
+  // Selecciona la línea vertical
+  const socialLine = document.getElementById('socialLine');
+
+  function updateSocialColors(currentScreen) {
+  if (darkScreens.includes(currentScreen)) {
+    socialLinks.forEach(function(link) {
+      link.style.transition = 'color 100ms';
+      link.style.color = '#121212';
+      var svg = link.querySelector('svg');
+      if (svg) {
+        svg.setAttribute('stroke', '#121212');
+      }
+    });
+    if (socialLine) {
+      socialLine.style.transition = 'background-color 100ms';
+      socialLine.style.backgroundColor = '#121212';
+    }
+  } else {
+    socialLinks.forEach(function(link) {
+      link.style.transition = 'color 100ms';
+      link.style.color = 'white';
+      var svg = link.querySelector('svg');
+      if (svg) {
+        svg.setAttribute('stroke', 'currentColor');
+      }
+    });
+    if (socialLine) {
+      socialLine.style.transition = 'background-color 100ms';
+      socialLine.style.backgroundColor = 'white';
+    }
+  }
+}
+
+
+  // Escucha el evento 'screenChanged'
+  window.addEventListener('screenChanged', (event) => {
+    const e = event as CustomEvent<{ screen: number }>;
+    if (e.detail && typeof e.detail.screen === 'number') {
+      const currentScreen = e.detail.screen + 1;
+      updateSocialColors(currentScreen);
+    }
+  });
+  // window.addEventListener('screenChanged', (e) => {
+  //   if (e.detail && typeof e.detail.screen === 'number') {
+  //     const currentScreen = e.detail.screen + 1;
+  //     updateSocialColors(currentScreen);
+  //   }
+  // });
+</script>

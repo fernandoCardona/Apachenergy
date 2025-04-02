@@ -1,0 +1,31 @@
+{
+    "heading": "Other <br class=\"block xs:hidden\"/> services",
+    "description": "Our company also advises and facilitates the installation of complementary services such as:",
+    "services": [
+      {
+        "id": "01",
+        "image": "/assets/icons/01.svg",
+        "title": "Aerothermal systems."
+      },
+      {
+        "id": "02",
+        "image": "/assets/icons/02.svg",
+        "title": "Geothermal systems."
+      },
+      {
+        "id": "03",
+        "image": "/assets/icons/03.svg",
+        "title": "Electric vehicle chargers."
+      },
+      {
+        "id": "04",
+        "image": "/assets/icons/04.svg",
+        "title": "Management of energy saving certificates (CAE)."
+      },
+      {
+        "id": "05",
+        "image": "/assets/icons/05.svg",
+        "title": "Energy efficiency consulting."
+      }
+    ]
+  }

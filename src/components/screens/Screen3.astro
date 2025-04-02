@@ -1,0 +1,55 @@
+---
+const { lang } = Astro.props;
+
+// Importar todos los datos de forma estática
+import esData from '../../i18n/lang/es/screen3.json';
+import enData from '../../i18n/lang/en/screen3.json';
+
+// Seleccionar los datos según el idioma
+const data = lang === 'es' ? esData : enData;
+console.log('SCREEN 3 black')
+---
+<section class="section-3 h-full w-full fixed top-0 invisible">
+  <div class="outer w-full h-full overflow-hidden">
+    <div class="inner w-full h-full overflow-hidden">
+      <div class="bg bg-3 absolute w-full h-full flex items-center justify-center">
+
+        <div class="w-full h-screen relative">
+          <div class="section-heading-top absolute w-full xsm:h-[96%] flex justify-center lg:justify-end items-center" data-delay="0.8">
+            <img src="/assets/thunderWhite.svg" class="h-[100%] 2xl:mr-[265px] z-0" alt="Logo thunder White">
+          </div>
+          <div class="w-full h-full flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-[20px] md:gap-[40px] lg:gap-[80px] xl:gap-[100px] z-0">
+            <div class="w-full lg:h-full lg:w-[200px] flex justify-center items-center lg:justify-start lg:items-start z-10 ">
+              <!-- Versión para móviles (<768px): usa "section-heading-left" -->
+              <h2 
+                class="block lg:hidden lg:absolute  lg:top-[375px] text-[40px] leading-[40px] xs:text-[55px] xs:leading-[55px] md:text-[80px] md:leading-[80px] tracking-[0px] font-MadeCanvas text-center lg:-rotate-90 section-heading"
+                data-delay="0.5"
+                set:html={data.heading}
+              ></h2>
+              <!-- Versión para desktop (>=768px): usa "section-heading" -->
+              <h2 
+                class={`hidden lg:flex lg:absolute ${lang === 'es' ? 'lg:left-[-60px]' : 'lg:left-[-30px]'} lg:top-[375px] text-[40px] leading-[40px] xs:text-[55px] xs:leading-[55px] md:text-[80px] md:leading-[80px] tracking-[0px] font-MadeCanvas text-center lg:-rotate-90 section-heading-left`}
+                data-delay="0.5"
+                set:html={data.heading}
+              ></h2>
+            </div>
+            <div class="section-heading w-fit h-fit lg:w-full lg:h-full flex justify-start items-center gap-4 md:gap-8 lg:pl-[5%] xl:pl-[4%] 3xl:pl-[2%] lg:pr-[5%] xl:pr-[4%] z-10 " data-delay="0.7">
+              <p class="text-[12px] leading-[16px] xs:text-[22px] xs:leading-[26px] md:text-[26px] md:leading-[30px] lg:text-[30px] lg:leading-[36px] xl:text-[36px] xl:leading-[40px] 2xl:text-[40px] 2xl:leading-[44px] 3xl:text-[44px] 3xl:leading-[48px] font-RobotoSlab text-center lg:text-left tracking-[0em] text-[#121212] max-w-[320px] md:max-w-[600px] lg:max-w-[950px]" set:html={data.description}>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bg-3 {
+    background: #F2F2F2 !important;
+  }
+  
+  .bg-3 h2 {
+    color: #121212;
+  }
+</style>
