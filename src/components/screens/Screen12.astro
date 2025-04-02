@@ -1,0 +1,40 @@
+---
+const { lang } = Astro.props;
+
+// Importar todos los datos de forma estática
+import esData from '../../i18n/lang/es/screen12.json';
+import enData from '../../i18n/lang/en/screen12.json';
+
+// Seleccionar los datos según el idioma
+const data = lang === 'es' ? esData : enData;
+console.log('SCREEN 12 white - otros servicios/other services')
+---
+<section class="section-12 h-full w-full fixed top-0 invisible">
+  <div class="outer w-full h-full overflow-hidden">
+    <div class="inner w-full h-full overflow-hidden">
+      <div class="bg bg-12 absolute w-full h-full flex items-center justify-center bg-cover bg-center">
+        <div class="w-full h-full flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-[40px] lg:gap-[80px] xl:gap-[100px] z-0">
+          <div class="lg:h-full flex flex-col justify-center items-center md:justify-center md:items-start gap-[25px] xs:gap-[40px] xl:gap-[60px] lg:ml-[14%] xl:ml-[15%] 2xl:ml-[19%] z-10">
+            <h2 class="section-heading flex flex-col md:justify-start md:items-start text-[55px] leading-[55px] xs:text-[70px] xs:leading-[70px] md:text-[130px] md:leading-[130px] lg:text-[130px] lg:leading-[140px] xl:text-[180px] xl:leading-[180px] 2xl:text-[220px] 2xl:leading-[220px] text-white font-MadeCanvas font-[900] text-center md:text-left pl-[0px] tracking-[0] max-w-[1200px]" data-delay="0.4" set:html={data.heading}>
+              
+
+            <h3 class=" section-heading text-[22px] leading-[26px] md:text-[32px] md:leading-[36px] lg:text-[40px] lg:leading-[44px] xl:text-[44px] xl:leading-[48px] font-RobotoSlab text-center md:text-left tracking-[0em] max-w-[315px] md:max-w-[570px] lg:max-w-[650px] xl:max-w-[750px] 2xl:max-w-[1250px]" data-delay="0.7" set:html={data.description}>
+            </h3>
+          </div>
+        </div>
+        <!-- Add additional content here -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bg-12 {
+    background-color: #000;
+    background-image: url('/assets/bg/bg6.webp');
+  }
+  
+  .bg-12 h2 {
+    color: white;
+  }
+</style>

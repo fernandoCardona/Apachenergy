@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "ESNext",
+      "allowJs": true
+    },
+    "include": ["**/*"],
+    "exclude": [
+      "dist",
+      "**/*.astro"
+    ]
+  }

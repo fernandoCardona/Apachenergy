@@ -1,0 +1,50 @@
+/* Importar Roboto Slab desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Para MadeCanvas, necesitarás tener los archivos de fuente localmente */
+@font-face {
+  font-family: 'MadeCanvas';
+  src: url('/fonts/MadeCanvas-Light.woff2') format('woff2'),
+       url('/fonts/MadeCanvas-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MadeCanvas';
+  src: url('/fonts/MadeCanvas-Regular.woff2') format('woff2'),
+       url('/fonts/MadeCanvas-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MadeCanvas';
+  src: url('/fonts/MadeCanvas-Medium.woff2') format('woff2'),
+       url('/fonts/MadeCanvas-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MadeCanvas';
+  src: url('/fonts/MadeCanvas-Black.woff2') format('woff2'),
+       url('/fonts/MadeCanvas-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Otros estilos globales que puedas necesitar */
+body {
+  font-family: 'Roboto Slab', serif;
+  background-color: #121212 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'MadeCanvas', sans-serif;
+  color: #fff;
+}

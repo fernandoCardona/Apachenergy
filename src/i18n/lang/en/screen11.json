@@ -1,0 +1,30 @@
+{
+    "heading": "A success<br class=\"block xs:hidden\"/> story",
+    "description": "Conclusions",
+    "exito3": [
+        {
+            "id": 1,
+            "image": "/assets/icons/01.svg",
+            "content": [
+              "<span class=\"text-[24px] leading-[28px] font-light\">The tax <strong class=\"font-bold\">benefits and deductions</strong> covered much more than the cost of installation.</span>"
+            ],
+            "bgColor": "bg-white"
+        },
+        {
+            "id": 2,
+            "image": "/assets/icons/02.svg",
+            "content": [
+                "<span class=\"text-[24px] leading-[28px] font-light\">The <strong class=\"font-bold\">electricity expense</strong> for common areas <strong class=\"font-bold\">became 0 €.</strong></span>"
+                ],
+            "bgColor": "bg-white"
+        },
+        {
+            "id": 3,
+            "image": "/assets/icons/02.svg",
+            "content": [
+                "<span class=\"text-[24px] leading-[28px] font-light\"><strong class=\"font-bold\">The expense</strong> on each neighbor's electricity bill <strong class=\"font-bold\">was reduced by an average of 50%.</strong></span>"
+                ],
+            "bgColor": "bg-white"
+        }
+    ]
+}

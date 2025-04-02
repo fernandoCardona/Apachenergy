@@ -1,0 +1,44 @@
+{
+    "heading": "Un caso <br class=\"block xs:hidden\"/>de éxito",
+    "description": "A continuación incluimos un cuadro resumen con los resultados conseguidos en una comunidad de propietarios de 85 vecinos situada en Moratalaz, Madrid Capital.",
+    "exito2": [
+        {
+            "id": 1,
+            "title": "<span class=\"text-[20px] leading-[24px]\"><strong class=\"font-bold\">ANTES</strong><span class=\"font-light\"> DE INSTALAR PANELES</span></span>",
+            "image": "/assets/icons/ApacheEnergyIcon1.svg",
+            "content": [
+              "<span class=\"block text-[14px] sm:text-[14px] font-light\">Gasto eléctrico áreas comunes:</span>",
+              "<span class=\"text-[24px]\"><strong class=\"font-bold\">7.527 €/año.</strong><span class=\"font-light\"></span>",
+              "<span class=\"block text-[16px] sm:text-[14px] font-light\">Gasto eléctrico medio viviendas particulares:</span>",
+              "<span class=\"text-[24px]\"><strong class=\"font-bold\">7.527 €/año.</strong><span class=\"font-light\"></span>"
+            ],
+            "bgColor": "bg-white"
+        },
+        {
+            "id": 2,
+            "title": "<span class=\"text-[20px] leading-[24px]\"><strong class=\"font-bold\">DESPUÉS</strong><span class=\"font-light\"> DE INSTALAR PANELES</span></span>",
+            "image": "/assets/icons/ApacheEnergyIcon2.svg",
+            "content": [
+              "<span class=\"block text-[14px] sm:text-[14px] font-light\">Gasto eléctrico áreas comunes:</span>",
+              "<span class=\"text-[24px]\"><strong class=\"font-bold\">0 €/año.</strong><span class=\"font-light\"></span>",
+              "<span class=\"block text-[16px] sm:text-[14px] font-light\">Gasto eléctrico medio viviendas particulares:</span>",
+              "<span class=\"text-[24px]\"><strong class=\"font-bold\">385 €/año.</strong><span class=\"font-light\"></span>"
+            ],
+            "bgColor": "bg-white"
+        },
+        {
+            "id": 3,
+            "title": "<span class=\"text-[20px] leading-[24px]\"><span class=\"font-light\">COSTES DE INSTALACIÓN </span><strong class=\"font-bold\">POR VECINO</strong></span>",
+            "image": "/assets/icons/ApacheEnergyIcon3.svg",
+            "content": [
+              "<span class=\"block text-[14px] sm:text-[14px] font-light\">Precio total:</span>",
+              "<span class=\"text-[24px]\"><strong class=\"font-bold\">1.245 €.</strong><span class=\"font-light\"></span>",
+              "<span class=\"block text-[16px] sm:text-[14px] font-light\">Importe de ayudas estatales:</span>",
+              "<span class=\"text-[24px]\"><strong class=\"font-bold\">2.250 €/año.</strong></span><span class=\"block text-[12px] font-light\">(Deducción IRPF + IBI)</span>",
+              "<span class=\"block text-[16px] sm:text-[14px] font-light\">Periodo de retorno de la inversión:</span>",
+              "<span class=\"text-[24px]\"><strong class=\"font-bold\">1 año.</strong></span>"
+            ],
+            "bgColor": "bg-white"
+        }
+    ]
+  }

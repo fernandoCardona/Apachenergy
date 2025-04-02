@@ -1,0 +1,56 @@
+---
+import { languages, defaultLang } from '../i18n/config';
+
+// Recibir currentPath como prop
+const { title, description, lang = defaultLang, currentPath = `/${lang}` } = Astro.props;
+
+const siteUrl = "https://apachenergy.com";
+// Usar currentPath en lugar de Astro.url.pathname
+const canonicalURL = new URL(currentPath, siteUrl);
+
+const alternateLanguages = Object.keys(languages).map(l => {
+  if (l === lang) return null;
+  
+  // Usar currentPath en lugar de Astro.url.pathname
+  return {
+    href: new URL(currentPath.replace(`/${lang}`, `/${l}`), siteUrl).toString(),
+    hreflang: l
+  };
+}).filter(Boolean);
+
+// Añadir el idioma por defecto (español) como x-default
+const defaultLanguage = {
+  // Usar currentPath en lugar de Astro.url.pathname
+  href: new URL(currentPath.replace(`/${lang}`, '/es'), siteUrl).toString(),
+  hreflang: "x-default"
+};
+---
+
+<!-- SEO -->
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<!-- Reemplazar Astro.generator por un valor estático -->
+<meta name="generator" content="Astro v2.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL('/og-image.jpg', siteUrl)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL('/og-image.jpg', siteUrl)} />
+
+<!-- Alternate languages -->
+{alternateLanguages.map(({ href, hreflang }) => (
+  <link rel="alternate" href={href} hreflang={hreflang} />
+))}
+<link rel="alternate" href={defaultLanguage.href} hreflang={defaultLanguage.hreflang} />

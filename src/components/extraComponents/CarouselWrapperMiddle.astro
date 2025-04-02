@@ -1,0 +1,52 @@
+---
+import ResponsiveCarouselMiddle from './ResponsiveCarouselMiddle';
+
+// Importar todos los archivos JSON estáticamente
+import esScreen9 from '../../i18n/lang/es/screen9.json';
+import enScreen9 from '../../i18n/lang/en/screen9.json';
+import esScreen11 from '../../i18n/lang/es/screen11.json';
+import enScreen11 from '../../i18n/lang/en/screen11.json';
+
+const { lang, screen } = Astro.props;
+
+// Seleccionar los datos según el idioma y la pantalla
+let data;
+if (screen === '9') {
+  data = lang === 'es' ? esScreen9 : enScreen9;
+} else if (screen === '11') {
+  data = lang === 'es' ? esScreen11 : enScreen11;
+} else {
+  // Fallback a una pantalla por defecto si es necesario
+  data = lang === 'es' ? esScreen9 : enScreen9;
+}
+
+// Extract the carousel data - dynamically get the key based on screen number
+const getCarouselData = () => {
+  switch (screen) {
+    case '9':
+      return data.exito2 || [];
+    case '11':
+      return data.exito3 || [];
+    default:
+      return [];
+  }
+};
+
+const slides = getCarouselData();
+---
+
+<div class="carousel-container w-full h-full">
+  <ResponsiveCarouselMiddle client:visible slides={slides} />
+</div>
+
+<style is:global>
+  /* Estilos adicionales para Swiper */
+  .swiper-pagination-bullet {
+    background-color: #121212 !important;
+    opacity: 0.5;
+  }
+  
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+</style>

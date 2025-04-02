@@ -1,0 +1,31 @@
+{
+    "heading": "Otros <br class=\"block xs:hidden\"/> servicios",
+    "description": "Nuestra empresa también asesora y facilita la instalación de servicios complementarios tales como:",
+    "services": [
+      {
+        "id": "01",
+        "image": "/assets/icons/01.svg",
+        "title": "Sistemas de aerotermia."
+      },
+      {
+        "id": "02",
+        "image": "/assets/icons/02.svg",
+        "title": "Sistemas de geotermia."
+      },
+      {
+        "id": "03",
+        "image": "/assets/icons/03.svg",
+        "title": "Cargadores para vehículos eléctricos."
+      },
+      {
+        "id": "04",
+        "image": "/assets/icons/04.svg",
+        "title": "Gestión de certificados de ahorro energético (CAE)."
+      },
+      {
+        "id": "05",
+        "image": "/assets/icons/05.svg",
+        "title": "Asesoramiento sobre eficiencia energética."
+      }
+    ]
+  }
