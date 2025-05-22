@@ -12,7 +12,7 @@ import enData from '../../i18n/lang/en/screen9.json';
 const data = lang === 'es' ? esData : enData;
 console.log('SCREEN 9 black')
 ---
-<section class="section-9 h-full w-full fixed top-0 invisible">
+<section class="section-9 h-[100dvh] w-full fixed top-0 invisible">
   <div class="outer w-full h-full overflow-hidden">
     <div class="inner w-full h-full overflow-hidden">
       <div class="bg bg-9 absolute w-full h-full flex items-center justify-center">
@@ -23,7 +23,7 @@ console.log('SCREEN 9 black')
           <div class="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-[20px] md:gap-[40px] lg:gap-[80px] xl:gap-[100px] z-0">
             <div class="w-full lg:h-full lg:w-[200px] flex justify-center items-center lg:justify-start lg:items-start z-10">
               <!-- Versión para móviles (<768px): usa "section-heading-left" -->
-              <h2 class={`block lg:hidden lg:absolute ${lang === 'es' ? 'lg:left-[-50px]' : 'lg:left-[-50px]'} lg:top-[300px] flex text-[40px] leading-[40px] xs:text-[55px] xs:leading-[55px] md:text-[80px] md:leading-[80px] tracking-[0px] font-MadeCanvas text-center lg:-rotate-90 section-heading`}
+              <h2 class={`block lg:hidden lg:absolute ${lang === 'es' ? 'lg:left-[-50px]' : 'lg:left-[-50px]'} lg:top-[300px] flex text-[30px] leading-[34px] xs:text-[40px] xs:leading-[44px] md:text-[80px] md:leading-[80px] tracking-[0px] font-MadeCanvas text-center lg:-rotate-90 section-heading`}
               data-delay="0.5" 
               set:html={data.heading}
               ></h2>

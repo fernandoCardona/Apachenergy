@@ -1,7 +1,7 @@
 ---
 // @ts-nocheck
 import Layout from '../../layouts/Layout.astro';
-import { languages } from '../../i18n/config';
+import { languages, defaultLang } from '../../i18n/config'; // Asegúrate de importar defaultLang
 import Screen1 from '../../components/screens/Screen1.astro';
 import Screen2 from '../../components/screens/Screen2.astro';
 import Screen3 from '../../components/screens/Screen3.astro';
@@ -29,27 +29,39 @@ const description = lang === 'es'
   ? 'Consultora especialista en energías renovables y autoconsumo colectivo. Ayudamos a comunidades de propietarios a instalar y gestionar sistemas fotovoltaicos.'
   : 'Specialists in renewable energy and collective self-consumption consulting. We help property communities install and manage photovoltaic systems.';
 
-const currentPath = `/${lang}`;
+const currentPath = Astro.url.pathname; // MODIFICADO: Usa Astro.url.pathname
 ---
 
 <Layout title={title} description={description} lang={lang} currentPath={currentPath}>
   <main>
-    <!-- --><Screen1 lang={lang} />
-    <Screen2 lang={lang} /> 
-    <Screen3 lang={lang} />
-    <Screen4 lang={lang} />
-    <Screen5 lang={lang} />
-    <Screen6 lang={lang} />
-    <Screen7 lang={lang} />
-    <Screen8 lang={lang} />
-    <Screen9 lang={lang} />
-    <Screen10 lang={lang} />
-    <Screen11 lang={lang} />
-    <Screen12 lang={lang} />
-    <Screen13 lang={lang} />
-    <Screen14 lang={lang} />
+    <div id="lang-root" class="opacity-0 transition-opacity duration-700">
+      <!-- --><Screen1 lang={lang} />
+      <Screen2 lang={lang} /> 
+      <Screen3 lang={lang} />
+      <Screen4 lang={lang} />
+      <Screen5 lang={lang} />
+      <Screen6 lang={lang} />
+      <Screen7 lang={lang} />
+      <Screen8 lang={lang} />
+      <Screen9 lang={lang} />
+      <Screen10 lang={lang} />
+      <Screen11 lang={lang} />
+      <Screen12 lang={lang} />
+      <Screen13 lang={lang} />
+      <Screen14 lang={lang} />
+    </div>
   </main>
 </Layout>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const root = document.getElementById('lang-root');
+    if (root) {
+      root.classList.remove('opacity-0');
+      root.classList.add('opacity-100');
+    }
+  });
+</script>
 
 <script>
   // @ts-nocheck

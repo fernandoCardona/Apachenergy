@@ -44,7 +44,7 @@ const t = currentLang === 'es' ? esMenu : enMenu;
     />
   </head>
   <body class="bg-black text-white">
-    <header class="fixed w-full z-30 px-4 md:px-8 py-6 flex justify-between items-center">
+    <header class="fixed w-full z-30 px-4 md:px-6 py-3 flex justify-between items-center bg-transparent bg-opacity-80 backdrop-blur-md">
       <div class=" w-full flex justify-center md:justify-start ml-[50px] md:ml-[0px]">
         <a href="#" class="w-fit  logo-link cursor-pointer">
           <!-- SVG del logo del header inline -->
@@ -70,7 +70,7 @@ const t = currentLang === 'es' ? esMenu : enMenu;
         </button>
       </div>
       
-      <div class="mobile-menu fixed top-0 right-0 h-full w-[300px] bg-black/90 z-50">
+      <div class="mobile-menu fixed top-0 right-0 h-full w-[300px] bg-black z-50">
         <button class="absolute top-7 right-7 close-menu text-white transform transition-transform duration-1000 ease-in-out hover:rotate-180 active:rotate-180" aria-label="Close menu">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -78,7 +78,7 @@ const t = currentLang === 'es' ? esMenu : enMenu;
           </svg>
         </button>
   
-        <nav class="pt-20 px-8">
+        <nav class="h-[100dvh] pt-20 px-8 bg-black/90">
           <ul class="flex flex-col gap-5 font-MadeCanvas text-[18px] tracking-[0.1em]">
             <li><a href="#" class="nav-link font-RobotoSlab hover:text-gray-300 pb-[5px] transition-all duration-300" data-section="objetivo" data-screens="2,3">{t.objective}</a></li>
             <li><a href="#" class="nav-link font-RobotoSlab hover:text-gray-300 pb-[5px] transition-all duration-300" data-section="servicios" data-screens="4,5">{t.services}</a></li>
@@ -88,23 +88,77 @@ const t = currentLang === 'es' ? esMenu : enMenu;
             <li><a href="#" class="nav-link font-RobotoSlab hover:text-gray-300 pb-[5px] transition-all duration-300" data-section="contacto" data-screens="14">{t.contact}</a></li>
           </ul>
           <div class="language-selector mt-8 flex items-start">
-            {orderedLanguages.map(([lang, label], index) => (
+            {orderedLanguages.map(([lang, label], index) => {
+              // lang es el idioma de destino del enlace (ej. 'es', 'en')
+              // currentLang es el idioma de la página actual
+              // currentPath es la ruta de la página actual (ej. '/', '/en', '/about', '/en/about')
+              
+              let basePagePath = currentPath;
+              const langPrefix = `/${currentLang}`; // Por ejemplo: /es o /en
+
+              // Determinar la ruta base (sin prefijo de idioma) de la página actual.
+              // Esto es importante porque Astro.url.pathname (currentPath) puede incluir el prefijo del idioma
+              // incluso para el idioma predeterminado si se navegó directamente a esa URL (ej. /es/pagina).
+              if (currentPath.startsWith(langPrefix + '/')) {
+                // Si currentPath es /<currentLang>/pagina, basePagePath será /pagina
+                basePagePath = currentPath.substring(langPrefix.length);
+              } else if (currentPath === langPrefix) {
+                // Si currentPath es solo /<currentLang>, basePagePath será /
+                basePagePath = '/';
+              }
+              // Si no coincide ninguno de los anteriores, currentPath ya es la ruta base
+              // (ej. para el idioma predeterminado: / o /pagina).
+
+              // Asegurarse de que basePagePath comience con '/' si no es la raíz.
+              // Esto es una salvaguarda, ya que Astro.url.pathname y la lógica anterior deberían garantizarlo.
+              if (basePagePath !== '/' && !basePagePath.startsWith('/')) {
+                basePagePath = '/' + basePagePath;
+              }
+              // Asegurarse de que basePagePath no esté vacío.
+              if (basePagePath === '') {
+                basePagePath = '/';
+              }
+
+              let finalHref;
+              if (lang === defaultLang) {
+                // Para el idioma por defecto ('es'), no se añade prefijo.
+                // Ej: basePagePath = '/' -> finalHref = '/'
+                // Ej: basePagePath = '/sobre-nosotros' -> finalHref = '/sobre-nosotros'
+                finalHref = basePagePath;
+              } else {
+                // Para otros idiomas ('en'), se añade el prefijo.
+                // Ej: basePagePath = '/', lang = 'en' -> finalHref = '/en'
+                // Ej: basePagePath = '/about', lang = 'en' -> finalHref = '/en/about'
+                finalHref = `/${lang}${basePagePath === '/' ? '' : basePagePath}`;
+              }
+              
+              // Normalizar la URL final
+              finalHref = finalHref.replace(/\/\//g, '/'); // Reemplazar '//' con '/'
+              if (finalHref !== '/' && finalHref.endsWith('/') && finalHref.length > 1) { // Eliminar '/' al final si no es la raíz
+                finalHref = finalHref.slice(0, -1);
+              }
+              if (finalHref === '') { // Asegurar que la URL sea al menos '/'
+                finalHref = '/';
+              }
+
+              return (
               <>
                 <a
-                  href={`/${lang}${currentPath.replace(/^\/[a-z]{2}/, '')}`}
+                  href={finalHref}
                   class={`px-0 py-1 text-[18px] font-RobotoSlab ${currentLang === lang ? 'text-white font-bold' : ' text-gray-400 font-light'} hover:text-white transition-all duration-300`}
                 >
                   {label}
                 </a>
                 {index < orderedLanguages.length - 1 && <span class="mx-2 mt-1 text-[18px] text-white">/</span>}
               </>
-            ))}
+            );
+            })}
           </div>
         </nav>
       </div>
     </header>
   
-    <slot />
+    <slot class="z-45"/>
   
     <div id="socialContainer" class="hidden fixed bottom-[80px] right-10 md:flex flex-col gap-3 items-center z-10">
       <a 

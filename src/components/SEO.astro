@@ -1,7 +1,24 @@
 ---
-const { title, description, lang, currentPath } = Astro.props;
-const canonicalURL = new URL(currentPath, Astro.site || 'https://apachenergy.es');
-const ogImage = new URL('/assets/og-image.jpg', Astro.site || 'https://apachenergy.es');
+import { defaultLang } from '../i18n/config'; // Importa defaultLang
+const { title, description, lang, currentPath } = Astro.props; // lang es el idioma de la página actual, currentPath es Astro.url.pathname
+
+const siteURL = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://apachenergy.es';
+const canonicalURL = new URL(currentPath, siteURL); // Esto debería ser correcto con currentPath = Astro.url.pathname
+const ogImage = new URL('/assets/og-image.jpg', siteURL);
+
+// Lógica para generar basePath (ruta sin prefijo de idioma)
+let basePath = currentPath;
+if (lang !== defaultLang && currentPath.startsWith(`/${lang}`)) {
+  basePath = currentPath.substring(lang.length); // Ej: /en/about -> /about
+}
+if (basePath === '') basePath = '/'; // Asegura que sea al menos '/' para la página de inicio
+if (basePath.charAt(0) !== '/') basePath = `/${basePath}`; // Asegura que comience con /
+
+// Generar URLs hreflang correctas
+const esHref = `${siteURL}${defaultLang === 'es' ? basePath : `/es${basePath === '/' ? '' : basePath}`}`.replace(/\/\//g, '/');
+const enHref = `${siteURL}${defaultLang === 'en' ? basePath : `/en${basePath === '/' ? '' : basePath}`}`.replace(/\/\//g, '/');
+const xDefaultHref = `${siteURL}${basePath}`.replace(/\/\//g, '/'); // x-default apunta a la versión del idioma predeterminado
+
 ---
 
 <!-- Metadatos básicos -->
@@ -31,9 +48,9 @@ const ogImage = new URL('/assets/og-image.jpg', Astro.site || 'https://apachener
 <meta name="keywords" content="energía renovable, autoconsumo colectivo, energía solar, consultoría energética, apache energy" />
 
 <!-- Etiquetas hreflang para internacionalización -->
-<link rel="alternate" hreflang="es" href={`https://apachenergy.es/es${currentPath.replace(/^\/[a-z]{2}/, '')}`} />
-<link rel="alternate" hreflang="en" href={`https://apachenergy.es/en${currentPath.replace(/^\/[a-z]{2}/, '')}`} />
-<link rel="alternate" hreflang="x-default" href={`https://apachenergy.es/es${currentPath.replace(/^\/[a-z]{2}/, '')}`} />
+<link rel="alternate" hreflang="es" href={esHref} />
+<link rel="alternate" hreflang="en" href={enHref} />
+<link rel="alternate" hreflang="x-default" href={xDefaultHref} />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">

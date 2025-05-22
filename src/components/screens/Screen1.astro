@@ -16,10 +16,10 @@ console.log('SCREEN 1 white - home')
 <section class="section-1 h-full w-full fixed top-0 invisible">
   <div class="outer w-full h-full overflow-hidden">
     <div class="inner w-full h-full overflow-hidden">
-      <div class="bg bg-1 absolute w-full h-screen">
+      <div class="bg bg-black absolute w-full h-screen">
         <div class="w-full h-screen relative">
-          <div class="section-heading-top absolute w-full xsm:h-[96%] flex justify-center lg:justify-end items-center" data-delay="0.7">
-            <img src="/assets/thunderGray.svg" class="h-[100%] 2xl:mr-[265px] z-0" alt=" Logo thunder Gray">
+          <div class="section-heading-top absolute w-full xsm:h-[96dvh] flex justify-center lg:justify-end items-center" data-delay="0.8">
+            <img src="/assets/thunderGray.svg" class="h-[100dvh] 2xl:mr-[265px] z-0 " alt=" Logo thunder Gray"> {/* Added pulse-animation class */}
           </div>
           <div class="w-full h-full flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-[40px] lg:gap-[80px] xl:gap-[100px] lg:ml-[10%] xl:ml-[8%] 2xl:ml-[10%] z-0">
             <div class="lg:h-full flex justify-center items-center md:justify-start md:items-start  z-10 lg:max-h-[300px] 2xl:max-h-[355px]">
@@ -44,12 +44,11 @@ console.log('SCREEN 1 white - home')
 </section>
 
 <style>
-  .bg-1 {
+  /* Estilos existentes */
+  .bg {
     background: #121212 !important;
   }
   
-  .bg-1 h2,
-  .bg-1 h3 {
-    color: #fff;
-  }
+  
+ 
 </style>

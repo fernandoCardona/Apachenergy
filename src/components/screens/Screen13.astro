@@ -20,7 +20,7 @@ console.log('SCREEN 13 black')
           <div class="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-[20px] md:gap-[40px] lg:gap-[80px] xl:gap-[100px] z-0">
             <div class="w-full lg:h-full lg:w-[200px] flex justify-center items-center lg:justify-start lg:items-start z-10">
               <!-- Versión para móviles (<768px): usa "section-heading-left" -->
-              <h2 class={`block lg:hidden lg:absolute ${lang === 'es' ? 'lg:left-[-50px]' : 'lg:left-[-50px]'} lg:top-[300px] flex text-[40px] leading-[40px] xs:text-[55px] xs:leading-[55px] md:text-[80px] md:leading-[80px] tracking-[0px] font-MadeCanvas text-center lg:-rotate-90 section-heading`}
+              <h2 class={`block lg:hidden lg:absolute ${lang === 'es' ? 'lg:left-[-50px]' : 'lg:left-[-50px]'} lg:top-[300px] text-[30px] leading-[34px] xs:text-[40px] xs:leading-[44px] md:text-[80px] md:leading-[80px] tracking-[0px] font-MadeCanvas text-center lg:-rotate-90 section-heading`}
               data-delay="0.5" 
               set:html={data.heading}
               ></h2>
@@ -39,10 +39,10 @@ console.log('SCREEN 13 black')
               <div class="section-heading w-[90%] h-full md:w-[100%] lg:w-full md:flex-col md:justify-start mt-2 md:max-w-[650px] lg:max-w-[750px] xl:max-w-[950px] 2xl:max-w-[1000px] md:max-h-[550px] lg:max-h-[550px] " data-delay="0.9">
                 <ul class="w-full flex flex-col justify-center items-start gap-2">
                   {data.services.map((service) => (
-                    <li class="relative w-full bg-white p-4 md:p-4 rounded-md flex items-center">
-                      <div class="w-full flex items-center gap-4">
-                        <img src={service.image} alt="Block number" class="w-8 h-8 md:w-10 md:h-10 mt-[-35px]" />
-                        <p class="text-[16px] md:text-[20px] lg:text-[24px] font-RobotoSlab font-light text-black">{service.title}</p>
+                    <li class="relative w-full bg-white p-2 md:p-4 rounded-md flex items-center">
+                      <div class="w-full flex items-center gap-1 md:gap-2 lg:gap-4">
+                        <img src={service.image} alt="Block number" class="w-4 h-4 md:w-10 md:h-10 mt-[-28px] md:mt-[-35px]" />
+                        <p class="text-[14px] md:text-[18px] lg:text-[24px] font-RobotoSlab font-light text-black">{service.title}</p>
                       </div>
                     </li>
                   ))}

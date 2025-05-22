@@ -30,17 +30,17 @@ export default function ResponsiveCarousel({ slides }) {
 
   // Función que renderiza un bloque en base a los datos
   const renderBlock = (slide) => (
-    <div className={`w-full ${slide.bgColor || 'bg-white'} flex h-full flex-col justify-start items-start gap-[10px] md:gap-[15px] p-3 md:p-6 rounded-lg shadow-md min-h-[300px] max-h-[450px]`}>
-      <img src={slide.image} alt={`Imagen de ${slide.title}`} className="w-12 h-12 md:w-10 md:h-10 mb-1 md:mb-2" />
+    <div className={`w-full ${slide.bgColor || 'bg-white'} flex h-full flex-col justify-start items-start gap-[10px] md:gap-[15px] p-3 md:p-6 rounded-lg shadow-md min-h-[240px] max-h-[450px]`}>
+      <img src={slide.image} alt={`Imagen de ${slide.title}`} className="w-8 h-8 md:w-10 md:h-10 mb-1 md:mb-2" />
       <h5 
-        className="text-[14px] leading-[18px] xs:text-[18px] xs:leading-[20px] font-RobotoSlab font-medium mb-2 text-black"
+        className="text-[14px] leading-[18px] xs:text-[18px] xs:leading-[20px] font-RobotoSlab font-medium mb-0 md:mb-2 text-black"
         dangerouslySetInnerHTML={{ __html: slide.title }}
       />
       <ul className="flex flex-col gap-1 pl-0 text-gray-700">
       {slide.content.map((item, index) => (
         <li
           key={index}
-          className=" leading-[28px] font-RobotoSlab font-light mb-2"
+          className=" leading-[18px] md:leading-[18px] font-RobotoSlab font-light mb-0 md:mb-2"
           dangerouslySetInnerHTML={{ __html: item }}
         />
       ))}

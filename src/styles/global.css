@@ -51,14 +51,17 @@ html, body {
   height: 100%;
   /* object-fit: cover; */
 }
+.bg-LoadingRedirect {
+  background: #000 !important; /* Cambiado a blanco para que coincida con la imagen de maqueta */
+}
 
 section {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  visibility: hidden;
+  height: 100dvh;
+  /*visibility: hidden;  <-- Aquí también se ocultan las secciones */
 }
 
 .section-heading {
